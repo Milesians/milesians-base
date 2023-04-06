@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f242ded3-3ce1-4986-a91f-0509ce398d8e" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/src/main/java/cn/milesians/provider/json/Jackson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/src/main/java/cn/milesians/provider/json/JacksonException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/src/main/java/cn/milesians/provider/json/ObjectMapperFactory.java" afterDir="false" />
+    <list default="true" id="f242ded3-3ce1-4986-a91f-0509ce398d8e" name="变更" comment="add:module jackson">
       <change beforePath="$PROJECT_DIR$/milesians-module/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/milesians-module/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/milesians-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/milesians-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +23,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -77,6 +74,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "spring.configuration.checksum": "43a666913cc87967601d4be43c523bb1",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -116,7 +114,8 @@
       <updated>1678687126875</updated>
       <workItem from="1678687127944" duration="4800000" />
       <workItem from="1680591042622" duration="1283000" />
-      <workItem from="1680600113441" duration="5265000" />
+      <workItem from="1680600113441" duration="7686000" />
+      <workItem from="1680767399689" duration="1517000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1678690720229</created>
@@ -125,14 +124,33 @@
       <option name="project" value="LOCAL" />
       <updated>1678690720229</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add:module jackson">
+      <created>1680744800777</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680744800777</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="add:module jackson" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:module jackson" />
   </component>
 </project>
