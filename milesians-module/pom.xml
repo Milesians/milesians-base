@@ -11,20 +11,14 @@
 
   <artifactId>milesians-module</artifactId>
 
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-
-
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>cn.milesians</groupId>
         <artifactId>milesians-bom</artifactId>
+        <version>${bom-version}</version>
         <scope>import</scope>
+        <type>pom</type>
       </dependency>
     </dependencies>
   </dependencyManagement>

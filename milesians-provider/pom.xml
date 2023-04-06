@@ -10,22 +10,22 @@
   </parent>
 
   <artifactId>milesians-provider</artifactId>
+  <packaging>pom</packaging>
 
-  <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  <modules>
+    <module>milesians-provider-json</module>
+  </modules>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>cn.milesians</groupId>
         <artifactId>milesians-bom</artifactId>
+        <version>${bom-version}</version>
         <scope>import</scope>
+        <type>pom</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
-
 
 </project>

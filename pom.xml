@@ -22,16 +22,21 @@
   </properties>
 
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>cn.milesians</groupId>
-        <artifactId>milesians-bom</artifactId>
-        <version>${bom-version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <repositories>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/milesians/milesians-base</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
   </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub OWNER Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/milesians/milesians-base</url>
+    </repository>
+  </distributionManagement>
 </project>
