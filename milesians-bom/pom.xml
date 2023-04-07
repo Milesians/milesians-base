@@ -16,10 +16,27 @@
     <spring.boot-version>3.0.4</spring.boot-version>
     <spring.cloud-version>2022.0.1</spring.cloud-version>
     <maven.deploy.skip>false</maven.deploy.skip>
+    <hutool-version>5.8.16</hutool-version>
+    <guava.version>31.1-jre</guava.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-core</artifactId>
+        <version>${hutool-version}</version>
+      </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>

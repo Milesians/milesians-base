@@ -18,6 +18,7 @@
 
   <modules>
     <module>milesians-provider-json</module>
+    <module>milesians-provider-web</module>
   </modules>
 
   <dependencyManagement>
