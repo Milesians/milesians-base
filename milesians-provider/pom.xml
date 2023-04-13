@@ -19,6 +19,8 @@
   <modules>
     <module>milesians-provider-json</module>
     <module>milesians-provider-web</module>
+    <module>milesians-provider-commons</module>
+    <module>milesians-provider-lemon</module>
   </modules>
 
   <dependencyManagement>
