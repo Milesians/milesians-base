@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f242ded3-3ce1-4986-a91f-0509ce398d8e" name="变更" comment="add:module jackson">
-      <change beforePath="$PROJECT_DIR$/milesians-module/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/milesians-module/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/milesians-provider/milesians-provider-json/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/milesians-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/milesians-provider/pom.xml" afterDir="false" />
+    <list default="true" id="f242ded3-3ce1-4986-a91f-0509ce398d8e" name="变更" comment="feat:乐檬授权实现">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="com.haulmont.jpb.NewClass" />
+        <option value="com.haulmont.jpb.JpaRepository" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -28,6 +29,9 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -38,6 +42,7 @@
         <option name="localRepository" value="$MAVEN_REPOSITORY$" />
         <option name="mavenHome" value="/opt/homebrew/Cellar/maven/3.8.6/libexec" />
         <option name="threads" value="1C" />
+        <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -51,10 +56,12 @@
   </component>
   <component name="ProjectId" id="2Mwmg7Khk9sFRCEQNDMbB62zfs8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
@@ -64,29 +71,45 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/milesians/code/github/milesians/milesians-provider/milesians-provider-json/src/main/java/cn/milesians/provider/json",
+    "last_opened_file_path": "/Users/milesians/code/github/milesians/milesians-provider/milesians-provider-web/src/main/java/cn/milesians/provider/web/converter",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "spring.configuration.checksum": "43a666913cc87967601d4be43c523bb1",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "3ca2a7f06f90b76fd6e3170ff1d9839d",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
+      "PostgreSQL"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/milesians-provider/milesians-provider-web/src/main/java/cn/milesians/provider/web/converter" />
       <recent name="$PROJECT_DIR$/milesians-provider/milesians-provider-json/src/main/java/cn/milesians/provider/json" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.." />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cn.milesians.provider.lemon" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.milesians.provider.lemon" />
       <recent name="cn.milesians.provider.json" />
+      <recent name="cn.milesians.provider.lemon.auth" />
+      <recent name="cn.milesians.module.lemon" />
+      <recent name="cn.milesians.module.lemon.authorization" />
     </key>
   </component>
   <component name="RunManager">
@@ -115,7 +138,13 @@
       <workItem from="1678687127944" duration="4800000" />
       <workItem from="1680591042622" duration="1283000" />
       <workItem from="1680600113441" duration="7686000" />
-      <workItem from="1680767399689" duration="1517000" />
+      <workItem from="1680767399689" duration="2457000" />
+      <workItem from="1680828929972" duration="2338000" />
+      <workItem from="1680831295894" duration="448000" />
+      <workItem from="1680831755628" duration="2170000" />
+      <workItem from="1680859293361" duration="1254000" />
+      <workItem from="1681292773550" duration="3036000" />
+      <workItem from="1681354049557" duration="14445000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1678690720229</created>
@@ -131,7 +160,42 @@
       <option name="project" value="LOCAL" />
       <updated>1680744800777</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat:skip deploy">
+      <created>1680769925480</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680769925480</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat:skip deploy">
+      <created>1680769951192</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680769951192</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add:provider-web">
+      <created>1680831602617</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680831602617</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add:AllowAllCorsFilter">
+      <created>1680832765764</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680832765764</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat:乐檬授权实现">
+      <created>1681374188979</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681374188979</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +215,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="add:module jackson" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:module jackson" />
+    <MESSAGE value="feat:skip deploy" />
+    <MESSAGE value="add:provider-web" />
+    <MESSAGE value="add:AllowAllCorsFilter" />
+    <MESSAGE value="feat:乐檬授权实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:乐檬授权实现" />
   </component>
 </project>

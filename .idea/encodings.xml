@@ -3,10 +3,18 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/milesians-bom/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/milesians-bom/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-module/milesians-module-lemon/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-module/milesians-module-lemon/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/milesians-module/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/milesians-module/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-commons/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-json/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-json/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-lemon/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-lemon/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/milesians-provider/milesians-provider-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/milesians-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/milesians-provider/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
