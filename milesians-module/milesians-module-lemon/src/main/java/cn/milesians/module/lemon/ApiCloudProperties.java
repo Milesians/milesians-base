@@ -24,6 +24,8 @@ public class ApiCloudProperties {
      */
     private String authUrl;
 
-
-
+    /**
+     * 跳转地址
+     */
+    private String redirectUrl;
 }
