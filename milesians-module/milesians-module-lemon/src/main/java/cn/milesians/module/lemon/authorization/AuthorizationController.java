@@ -6,8 +6,9 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.jwt.JWT;
 import cn.milesians.module.lemon.ApiCloudProperties;
 import cn.milesians.module.lemon.LemonProperties;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationSaveRequest;
 import cn.milesians.provider.commons.exception.ProviderException;
-import cn.milesians.provider.lemon.TokenResponseDTO;
+import cn.milesians.provider.lemon.auth.TokenResponseDTO;
 import cn.milesians.provider.lemon.auth.AuthFeign;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("${url.auth-prefix:/api/lemon/auth}")
+@RequestMapping("/api/lemon/auth}")
 public class AuthorizationController {
 
 

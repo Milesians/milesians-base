@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  */
 @EnableConfigurationProperties({ApiCloudProperties.class, LemonProperties.class})
 @EnableJpaAuditing
-@ComponentScan({"cn.milesians.module.lemon"})
+@ComponentScan({"cn.milesians.module.lemon","cn.milesians.provider.lemon"})
 @AutoConfiguration
 public class LemonAutoConfiguration {
 

@@ -1,7 +1,6 @@
 package cn.milesians.provider.lemon.auth;
 
 
-import cn.milesians.provider.lemon.TokenResponseDTO;
 import feign.Body;
 import feign.Headers;
 import feign.Param;

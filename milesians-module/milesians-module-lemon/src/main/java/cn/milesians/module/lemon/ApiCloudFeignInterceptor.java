@@ -3,8 +3,8 @@ package cn.milesians.module.lemon;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.milesians.module.lemon.authorization.AuthorizationDTO;
-import cn.milesians.module.lemon.authorization.AuthorizationGetQuery;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationDTO;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationGetQuery;
 import cn.milesians.module.lemon.authorization.AuthorizationManager;
 import cn.milesians.provider.commons.exception.ProviderException;
 import com.google.common.cache.CacheBuilder;

@@ -1,6 +1,9 @@
 package cn.milesians.module.lemon.authorization;
 
 import cn.milesians.module.lemon.authorization.Authorization.AuthorizationId;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationDTO;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationGetQuery;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationSaveRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

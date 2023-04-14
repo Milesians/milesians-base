@@ -1,5 +1,8 @@
 package cn.milesians.module.lemon.authorization;
 
+import cn.milesians.module.lemon.authorization.dto.AuthorizationDTO;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationGetQuery;
+import cn.milesians.module.lemon.authorization.dto.AuthorizationSaveRequest;
 import java.util.List;
 import org.springframework.lang.Nullable;
 

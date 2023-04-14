@@ -42,5 +42,9 @@
       <groupId>io.github.openfeign</groupId>
       <artifactId>feign-httpclient</artifactId>
     </dependency>
+    <dependency>
+      <groupId>cn.milesians</groupId>
+      <artifactId>milesians-provider-validation</artifactId>
+    </dependency>
   </dependencies>
 </project>
