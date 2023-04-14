@@ -6,6 +6,7 @@ import cn.milesians.provider.lemon.basic.branch.dto.BranchDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchFindDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchGroupingDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchGroupingFindDTO;
+import cn.milesians.provider.lemon.basic.branch.dto.BranchRegionDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchRegionFindDTO;
 import cn.milesians.provider.commons.Response;
 import io.swagger.v3.oas.annotations.Operation;
@@ -43,7 +44,7 @@ public class ApiBranchController {
 
     @GetMapping(value = "/region/find")
     @Operation(description = "查询门店区域")
-    public Response findBranchInfo(@Validated BranchRegionFindDTO branchRegionFindDTO) {
+    public Response<List<BranchRegionDTO>> findBranchInfo(@Validated BranchRegionFindDTO branchRegionFindDTO) {
 
         return Response.success(apiBranchRpc.findBranchRegion(branchRegionFindDTO));
     }

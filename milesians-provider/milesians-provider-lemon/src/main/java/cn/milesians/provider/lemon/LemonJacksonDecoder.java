@@ -4,7 +4,6 @@ package cn.milesians.provider.lemon;
 import cn.milesians.provider.commons.exception.ProviderException;
 import cn.milesians.provider.json.Jackson;
 import cn.milesians.provider.json.ObjectMapperFactory;
-import cn.milesians.provider.lemon.auth.TokenResponseDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.RuntimeJsonMappingException;
@@ -15,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -56,7 +56,7 @@ public class LemonJacksonDecoder implements Decoder {
         if (response.body() == null) {
             return null;
         }
-        Reader reader = response.body().asReader();
+        Reader reader = response.body().asReader(StandardCharsets.UTF_8);
         if (!reader.markSupported()) {
             reader = new BufferedReader(reader, 1);
         }
