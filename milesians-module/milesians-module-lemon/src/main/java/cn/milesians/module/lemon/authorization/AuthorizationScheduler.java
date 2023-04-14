@@ -1,6 +1,7 @@
 package cn.milesians.module.lemon.authorization;
 
 import cn.hutool.core.codec.Base64;
+import cn.milesians.module.lemon.ApiCloudFeignInterceptor;
 import cn.milesians.module.lemon.LemonProperties;
 import cn.milesians.module.lemon.authorization.Authorization.AuthorizationId;
 import cn.milesians.provider.lemon.TokenResponseDTO;
@@ -24,6 +25,8 @@ public class AuthorizationScheduler {
     private final AuthorizationManager authorizationManager;
 
 
+    private final ApiCloudFeignInterceptor apiCloudFeignInterceptor;
+
     private final AuthFeign authFeign;
 
     private final LemonProperties lemonProperties;
@@ -41,6 +44,7 @@ public class AuthorizationScheduler {
                 lemonProperties.getAppId(),
                 lemonProperties.getAppSecret(),
                 authorization.getRefreshToken());
+            apiCloudFeignInterceptor.evict(authorization.getBookCode());
         }
         log.info(Thread.currentThread().getName() + ": 定时任务结束刷新token");
     }
@@ -49,13 +53,14 @@ public class AuthorizationScheduler {
         String refreshToken) {
         String credential = "Basic ".concat(Base64.encode(appId.concat(":").concat(appSecret)));
         TokenResponseDTO tokenResponseDTO = authFeign.getTokenByRefreshToken(credential, refreshToken);
-        AuthorizationId tokenId = new AuthorizationId();
-        tokenId.setBookCode(systemBookCode);
-        tokenId.setAppType(appType);
-        Authorization token = new Authorization();
-        token.setId(tokenId);
-        token.setAccessToken(tokenResponseDTO.getAccessToken());
-        token.setRefreshToken(tokenResponseDTO.getRefreshToken());
+
+        AuthorizationSaveRequest saveRequest = new AuthorizationSaveRequest();
+        saveRequest.setBookCode(systemBookCode);
+        saveRequest.setAppType(appType);
+        saveRequest.setAccessToken(tokenResponseDTO.getAccessToken());
+        saveRequest.setRefreshToken(tokenResponseDTO.getRefreshToken());
+
+        authorizationManager.setOne(saveRequest);
         log.info("账套号{}刷新token成功", systemBookCode);
     }
 

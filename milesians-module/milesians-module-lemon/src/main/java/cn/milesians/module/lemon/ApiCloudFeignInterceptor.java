@@ -12,6 +12,8 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.concurrent.ExecutionException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -26,7 +28,7 @@ public class ApiCloudFeignInterceptor implements RequestInterceptor {
     private final LoadingCache<String, AuthorizationDTO> authorizationCache = CacheBuilder.newBuilder()
         .concurrencyLevel(8)
         .initialCapacity(1)
-
+        .expireAfterWrite(Duration.of(10, ChronoUnit.MINUTES))
         .maximumSize(100)
         .build(new CacheLoader<>() {
                    @Override
@@ -39,6 +41,9 @@ public class ApiCloudFeignInterceptor implements RequestInterceptor {
                }
         );
 
+    public void evict(String systemBookCode){
+        authorizationCache.invalidate(systemBookCode);
+    }
     @Override
     public void apply(RequestTemplate requestTemplate) {
         String systemBookCode = CollUtil.get(requestTemplate.headers().get("Book-Code"), 0);
@@ -49,7 +54,7 @@ public class ApiCloudFeignInterceptor implements RequestInterceptor {
             throw new ProviderException("Book-Code is empty");
         }
 
-        String accessToken = null;
+        String accessToken;
         try {
             accessToken = authorizationCache.get(systemBookCode).getRefreshToken();
         } catch (ExecutionException e) {

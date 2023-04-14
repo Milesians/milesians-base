@@ -1,5 +1,6 @@
-package cn.milesians.module.lemon.authorization;
+package cn.milesians.module.lemon;
 
+import cn.milesians.module.lemon.ApiCloudFeignInterceptor;
 import cn.milesians.module.lemon.ApiCloudProperties;
 import cn.milesians.provider.lemon.LemonJacksonDecoder;
 import cn.milesians.provider.lemon.auth.AuthFeign;
@@ -26,6 +27,8 @@ public class AuthorizationConfiguration {
 
     private final ApiCloudProperties apiCloudProperties;
 
+    private final ApiCloudFeignInterceptor apiCloudFeignInterceptor;
+
     @Bean
     public AuthFeign createAuthFeign() {
         return Feign.builder()
@@ -33,6 +36,7 @@ public class AuthorizationConfiguration {
             .options(new Request.Options(5, TimeUnit.SECONDS, 3, TimeUnit.MINUTES, true))
             .retryer(new Retryer.Default(5000, 5000, 3))
             .logger(new Slf4jLogger(AuthFeign.class))
+            .requestInterceptor(apiCloudFeignInterceptor)
             .logLevel(Level.FULL)
             .target(AuthFeign.class, apiCloudProperties.getAuthUrl());
     }
