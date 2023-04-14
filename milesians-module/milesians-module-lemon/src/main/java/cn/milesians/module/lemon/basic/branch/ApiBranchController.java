@@ -1,7 +1,6 @@
 package cn.milesians.module.lemon.basic.branch;
 
 
-import cn.milesians.provider.lemon.basic.branch.ApiBranchRpc;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchFindDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchGroupingDTO;

@@ -47,6 +47,10 @@
       <artifactId>milesians-provider-lemon</artifactId>
     </dependency>
     <dependency>
+      <groupId>cn.milesians</groupId>
+      <artifactId>milesians-provider-validation</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <scope>provided</scope>

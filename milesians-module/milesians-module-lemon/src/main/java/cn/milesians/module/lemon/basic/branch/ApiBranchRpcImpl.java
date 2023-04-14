@@ -1,9 +1,10 @@
-package cn.milesians.provider.lemon.basic.branch;
+package cn.milesians.module.lemon.basic.branch;
 
 
 import cn.hutool.core.util.StrUtil;
 import cn.milesians.provider.commons.exception.ProviderException;
 import cn.milesians.provider.lemon.LemonProviderException;
+import cn.milesians.provider.lemon.basic.branch.BranchFeign;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchFindDTO;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchGroupingDTO;

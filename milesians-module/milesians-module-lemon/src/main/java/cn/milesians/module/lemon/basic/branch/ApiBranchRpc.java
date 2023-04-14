@@ -1,4 +1,4 @@
-package cn.milesians.provider.lemon.basic.branch;
+package cn.milesians.module.lemon.basic.branch;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.milesians.provider.lemon.basic.branch.dto.BranchDTO;
