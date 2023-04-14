@@ -12,7 +12,6 @@
     <module>milesians-bom</module>
     <module>milesians-provider</module>
     <module>milesians-module</module>
-    <module>milesians-provider/milesians-providers-validation</module>
   </modules>
 
   <properties>
