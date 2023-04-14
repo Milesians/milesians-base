@@ -45,7 +45,6 @@ public class ApiBranchController {
     @GetMapping(value = "/region/find")
     @Operation(description = "查询门店区域")
     public Response<List<BranchRegionDTO>> findBranchInfo(@Validated BranchRegionFindDTO branchRegionFindDTO) {
-
         return Response.success(apiBranchRpc.findBranchRegion(branchRegionFindDTO));
     }
 }

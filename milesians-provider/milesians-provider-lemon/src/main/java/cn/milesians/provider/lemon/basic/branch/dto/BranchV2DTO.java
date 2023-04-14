@@ -43,6 +43,7 @@ public class BranchV2DTO implements Serializable {
 
     private Boolean branchRdc;
 
+
     private Integer managementTemplateNum;
 
     /**

@@ -1,11 +1,11 @@
 package cn.milesians.provider.lemon.basic.branch.dto;
 
-
 import java.io.Serial;
 import java.io.Serializable;
 import lombok.Data;
 
 @Data
+
 public class BranchMatrixDTO implements Serializable {
 
     @Serial
