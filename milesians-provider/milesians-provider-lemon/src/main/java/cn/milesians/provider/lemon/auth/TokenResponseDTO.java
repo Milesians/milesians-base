@@ -1,4 +1,4 @@
-package cn.milesians.provider.lemon;
+package cn.milesians.provider.lemon.auth;
 
 import java.io.Serializable;
 import lombok.Data;

@@ -12,6 +12,7 @@
     <module>milesians-bom</module>
     <module>milesians-provider</module>
     <module>milesians-module</module>
+    <module>milesians-provider/milesians-providers-validation</module>
   </modules>
 
   <properties>
@@ -38,6 +39,11 @@
       <dependency>
         <groupId>cn.milesians</groupId>
         <artifactId>milesians-provider-lemon</artifactId>
+        <version>${module.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.milesians</groupId>
+        <artifactId>milesians-provider-validation</artifactId>
         <version>${module.version}</version>
       </dependency>
     </dependencies>

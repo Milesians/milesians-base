@@ -1,5 +1,6 @@
-package cn.milesians.module.lemon.authorization;
+package cn.milesians.module.lemon.authorization.dto;
 
+import cn.milesians.module.lemon.authorization.Authorization;
 import java.io.Serial;
 import java.io.Serializable;
 import lombok.Data;

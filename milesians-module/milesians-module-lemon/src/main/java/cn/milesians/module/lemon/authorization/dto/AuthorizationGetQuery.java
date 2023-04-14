@@ -1,4 +1,4 @@
-package cn.milesians.module.lemon.authorization;
+package cn.milesians.module.lemon.authorization.dto;
 
 import lombok.Getter;
 import lombok.Setter;
