@@ -5,7 +5,7 @@ import cn.milesians.module.lemon.ApiCloudFeignInterceptor;
 import cn.milesians.module.lemon.LemonProperties;
 import cn.milesians.module.lemon.authorization.dto.AuthorizationDTO;
 import cn.milesians.module.lemon.authorization.dto.AuthorizationSaveRequest;
-import cn.milesians.provider.lemon.auth.TokenResponseDTO;
+import cn.milesians.provider.lemon.TokenResponseDTO;
 import cn.milesians.provider.lemon.auth.AuthFeign;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

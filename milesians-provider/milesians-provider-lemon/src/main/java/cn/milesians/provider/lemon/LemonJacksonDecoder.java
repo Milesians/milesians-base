@@ -15,6 +15,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -56,7 +57,7 @@ public class LemonJacksonDecoder implements Decoder {
         if (response.body() == null) {
             return null;
         }
-        Reader reader = response.body().asReader();
+        Reader reader = response.body().asReader(StandardCharsets.UTF_8);
         if (!reader.markSupported()) {
             reader = new BufferedReader(reader, 1);
         }
