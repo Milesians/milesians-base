@@ -20,33 +20,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <bom-version>1.0-SNAPSHOT</bom-version>
     <maven.deploy.skip>true</maven.deploy.skip>
-    <module.version>1.0-SNAPSHOT</module.version>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>cn.milesians</groupId>
-        <artifactId>milesians-provider-json</artifactId>
-        <version>${module.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>cn.milesians</groupId>
-        <artifactId>milesians-provider-commons</artifactId>
-        <version>${module.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>cn.milesians</groupId>
-        <artifactId>milesians-provider-lemon</artifactId>
-        <version>${module.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>cn.milesians</groupId>
-        <artifactId>milesians-provider-validation</artifactId>
-        <version>${module.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+
 
   <repositories>
     <repository>

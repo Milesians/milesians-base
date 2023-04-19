@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @since 1.0
  */
 @Slf4j
-@ConditionalOnMissingBean(AuthorizationManager.class)
+//@ConditionalOnMissingBean(AuthorizationManager.class)
 @RequiredArgsConstructor
 @Service
 public class DBAuthorizationManager implements AuthorizationManager {

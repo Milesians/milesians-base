@@ -23,6 +23,7 @@
     <springdoc.version>2.1.0</springdoc.version>
     <springdoc-core.version>1.7.0</springdoc-core.version>
     <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
+    <module.version>1.0-SNAPSHOT</module.version>
   </properties>
   <build>
     <pluginManagement>
@@ -101,6 +102,31 @@
         <version>${spring.cloud-version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>cn.milesians</groupId>
+        <artifactId>milesians-provider-json</artifactId>
+        <version>${module.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.milesians</groupId>
+        <artifactId>milesians-provider-commons</artifactId>
+        <version>${module.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.milesians</groupId>
+        <artifactId>milesians-provider-lemon</artifactId>
+        <version>${module.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.milesians</groupId>
+        <artifactId>milesians-provider-validation</artifactId>
+        <version>${module.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.milesians</groupId>
+        <artifactId>milesians-module-lemon</artifactId>
+        <version>${module.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

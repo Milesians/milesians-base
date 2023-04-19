@@ -1,11 +1,14 @@
 package cn.milesians.module.lemon.authorization;
 
+import jakarta.persistence.Access;
+import jakarta.persistence.AccessType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import java.io.Serial;
 import java.io.Serializable;
@@ -27,10 +30,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Getter
 @Setter
 @EntityListeners(value = AuditingEntityListener.class)
-public class Authorization {
+public class Authorization implements Serializable {
 
-    @EmbeddedId
-    private AuthorizationId id;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private String accessToken;
 
@@ -42,19 +45,19 @@ public class Authorization {
     @LastModifiedDate
     private LocalDateTime updateTime;
 
-    @Embeddable
+    @EmbeddedId
+    private AuthorizationId id;
+
     @Getter
     @Setter
     @EqualsAndHashCode
+    @Embeddable
     public static class AuthorizationId implements Serializable {
 
         @Serial
         private static final long serialVersionUID = 1L;
-
-        @Id
         @Column(name = "book_code", nullable = false)
         private String bookCode;
-        @Id
         @Column(name = "app_type", nullable = false)
         private String appType;
     }
