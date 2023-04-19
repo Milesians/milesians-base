@@ -16,7 +16,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,30 +43,32 @@ public class AuthorizationController {
 
     @RequestMapping("/api/lemon/auth")
     public void auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String codeUrlTemplate = apiCloudProperties.getAuthUrl()
-            + "/oauth/authorize?response_type=code&state=state&client_id=%s&redirect_uri=%s";
-
-        String codeUrl = String.format(codeUrlTemplate, lemonProperties.getAppId(),
-            apiCloudProperties.getRedirectUrl());
-
-        response.sendRedirect(codeUrl);
+        response.sendRedirect(this.getAuthUrl());
     }
+
 
     @GetMapping("/api/lemon/code")
     public String getCode(@RequestParam(value = "code", required = false) String code,
         @RequestParam(value = "state", required = false) String state) {
         if (StrUtil.isBlank(code)) {
-            return "/fail";
+            return "授权失败 重试->" + this.getAuthUrl();
         }
         try {
             getToken(code);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-            throw new ProviderException("授权发生异常");
+            throw new ProviderException("授权发生异常:"+e.getMessage());
         }
 
         return "授权成功";
+    }
+
+    private String getAuthUrl() {
+        String codeUrlTemplate = apiCloudProperties.getAuthUrl()
+            + "/oauth/authorize?response_type=code&state=state&client_id=%s&redirect_uri=%s";
+
+        return String.format(codeUrlTemplate, lemonProperties.getAppId(),
+            apiCloudProperties.getRedirectUrl());
     }
 
     private void getToken(String code) {
