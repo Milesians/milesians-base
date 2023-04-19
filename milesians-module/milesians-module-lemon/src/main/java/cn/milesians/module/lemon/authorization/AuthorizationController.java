@@ -8,15 +8,19 @@ import cn.milesians.module.lemon.ApiCloudProperties;
 import cn.milesians.module.lemon.LemonProperties;
 import cn.milesians.module.lemon.authorization.dto.AuthorizationSaveRequest;
 import cn.milesians.provider.commons.exception.ProviderException;
-import cn.milesians.provider.lemon.auth.TokenResponseDTO;
 import cn.milesians.provider.lemon.auth.AuthFeign;
+import cn.milesians.provider.lemon.auth.TokenResponseDTO;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 认证服务授权
@@ -24,10 +28,9 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author nhsoft.shidq
  * @date 2021-08-26
  */
-@Controller
+@RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("/api/lemon/auth}")
 public class AuthorizationController {
 
 
@@ -39,23 +42,23 @@ public class AuthorizationController {
 
     private final AuthorizationManager authorizationManager;
 
-    @RequestMapping("/auth")
-    public String auth(Model model) {
+    @RequestMapping("/api/lemon/auth")
+    public void auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String codeUrlTemplate = apiCloudProperties.getAuthUrl()
             + "/oauth/authorize?response_type=code&state=state&client_id=%s&redirect_uri=%s";
 
         String codeUrl = String.format(codeUrlTemplate, lemonProperties.getAppId(),
             apiCloudProperties.getRedirectUrl());
 
-        model.addAttribute("codeUrl", codeUrl);
-        return "auth";
+        response.sendRedirect(codeUrl);
     }
 
-    @GetMapping("/code")
+    @GetMapping("/api/lemon/code")
     public String getCode(@RequestParam(value = "code", required = false) String code,
         @RequestParam(value = "state", required = false) String state) {
         if (StrUtil.isBlank(code)) {
-            return "fail";
+            return "/fail";
         }
         try {
             getToken(code);
@@ -64,7 +67,7 @@ public class AuthorizationController {
             throw new ProviderException("授权发生异常");
         }
 
-        return "success";
+        return "授权成功";
     }
 
     private void getToken(String code) {

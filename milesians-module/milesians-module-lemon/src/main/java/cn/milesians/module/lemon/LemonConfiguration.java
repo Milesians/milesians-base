@@ -37,7 +37,7 @@ public class LemonConfiguration {
             .options(new Request.Options(5, TimeUnit.SECONDS, 3, TimeUnit.MINUTES, true))
             .retryer(new Retryer.Default(5000, 5000, 3))
             .logger(new Slf4jLogger(AuthFeign.class))
-            .requestInterceptor(apiCloudFeignInterceptor)
+//            .requestInterceptor(apiCloudFeignInterceptor)
             .logLevel(Level.FULL)
             .target(AuthFeign.class, apiCloudProperties.getAuthUrl());
     }
