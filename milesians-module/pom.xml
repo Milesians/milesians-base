@@ -15,10 +15,6 @@
 
   <packaging>pom</packaging>
 
-  <properties>
-    <maven.deploy.skip>true</maven.deploy.skip>
-  </properties>
-
   <artifactId>milesians-module</artifactId>
 
   <dependencyManagement>
