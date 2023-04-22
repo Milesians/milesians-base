@@ -24,6 +24,7 @@
     <springdoc-core.version>1.7.0</springdoc-core.version>
     <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
     <module.version>1.0-SNAPSHOT</module.version>
+    <querydsl.version>5.0.0</querydsl.version>
   </properties>
   <build>
     <pluginManagement>
@@ -44,6 +45,18 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <artifactId>querydsl-apt</artifactId>
+        <classifier>jakarta</classifier>
+        <groupId>com.querydsl</groupId>
+        <version>${querydsl.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>querydsl-jpa</artifactId>
+        <groupId>com.querydsl</groupId>
+        <classifier>jakarta</classifier>
+        <version>${querydsl.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.springdoc</groupId>
         <artifactId>springdoc-openapi-ui</artifactId>
