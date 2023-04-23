@@ -18,8 +18,7 @@ import org.slf4j.LoggerFactory;
 public final class ObjectMapperFactory {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ObjectMapperFactory.class);
-    private static final ObjectMapper UNMODIFIABLE_OBJECT_MAPPER = ImmutableObjectMapper.of(
-        createModifiableObjectMapper());
+    private static final ObjectMapper UNMODIFIABLE_OBJECT_MAPPER = createModifiableObjectMapper();
 
     private ObjectMapperFactory() {
     }

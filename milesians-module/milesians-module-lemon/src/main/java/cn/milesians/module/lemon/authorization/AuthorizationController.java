@@ -10,6 +10,7 @@ import cn.milesians.module.lemon.authorization.dto.AuthorizationSaveRequest;
 import cn.milesians.provider.commons.exception.ProviderException;
 import cn.milesians.provider.lemon.auth.AuthFeign;
 import cn.milesians.provider.lemon.auth.TokenResponseDTO;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -41,12 +42,13 @@ public class AuthorizationController {
 
     private final AuthorizationManager authorizationManager;
 
+    @Operation(hidden = true)
     @RequestMapping("/api/lemon/auth")
     public void auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect(this.getAuthUrl());
     }
 
-
+    @Operation(hidden = true)
     @GetMapping("/api/lemon/code")
     public String getCode(@RequestParam(value = "code", required = false) String code,
         @RequestParam(value = "state", required = false) String state) {

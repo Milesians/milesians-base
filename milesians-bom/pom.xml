@@ -22,6 +22,7 @@
     <mapstruct.version>1.5.3.Final</mapstruct.version>
     <springdoc.version>2.1.0</springdoc.version>
     <springdoc-core.version>1.7.0</springdoc-core.version>
+    <springdoc-starter.version>2.1.0</springdoc-starter.version>
     <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
     <module.version>1.0-SNAPSHOT</module.version>
     <querydsl.version>5.0.0</querydsl.version>
@@ -60,7 +61,12 @@
       <dependency>
         <groupId>org.springdoc</groupId>
         <artifactId>springdoc-openapi-ui</artifactId>
-        <version>${springdoc.version}</version>
+        <version>${springdoc-ui.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>${springdoc-starter.version}</version>
       </dependency>
       <dependency>
         <groupId>org.springdoc</groupId>
@@ -140,6 +146,16 @@
         <groupId>cn.milesians</groupId>
         <artifactId>milesians-module-lemon</artifactId>
         <version>${module.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.ws.rs</groupId>
+        <artifactId>jakarta.ws.rs-api</artifactId>
+        <version>3.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>5.0.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
